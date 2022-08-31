@@ -4,15 +4,22 @@ version: "3"
 services:
   nginx:
     build: .
+    restart: always
     ports:
       - 80:80
       - 443:443
     volumes:
       - certs:/etc/letsencrypt
       - sites-availables:/etc/nginx/conf.d
+    networks:
+      - selfhost
 
 volumes:
   certs:
     name: certs
   sites-availables:
     name: sites-availables
+
+networks:
+  selfhost:
+    name: selfhost
