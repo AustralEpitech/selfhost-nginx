@@ -2,10 +2,14 @@
 version: "3"
 
 services:
-  certs:
+  nginx:
+    build: .
+    ports:
+      - 80:80
+      - 443:443
     volumes:
       - certs:/etc/letsencrypt
-      - nginx-conf:/etc/nginx/conf.d
+      - sites-availables:/etc/nginx/conf.d
 
 volumes:
   certs:
