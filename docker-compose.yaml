@@ -1,0 +1,14 @@
+---
+version: "3"
+
+services:
+  certs:
+    volumes:
+      - certs:/etc/letsencrypt
+      - nginx-conf:/etc/nginx/conf.d
+
+volumes:
+  certs:
+    name: certs
+  sites-availables:
+    name: sites-availables
