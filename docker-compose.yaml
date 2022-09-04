@@ -15,10 +15,10 @@ services:
       - selfhost
 
 volumes:
-  certs:
-    name: certs
   sites-availables:
     name: sites-availables
+  certs:
+    name: certs
 
 networks:
   selfhost:
