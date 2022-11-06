@@ -4,7 +4,7 @@ version: "3.7"
 services:
   nginx:
     build: .
-    restart: unless_stopped
+    restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"
